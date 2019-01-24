@@ -1,0 +1,117 @@
+<html>
+<head>
+<style>
+body
+{
+background-size: 1530px 1300px;
+background-repeat: no-repeat;
+}
+#k
+{
+position:relative;
+right:10px;
+}
+#b
+{
+position:relative;
+right:-16px;
+}
+#a
+{
+position:relative;
+right:-20px;
+}
+#x
+{
+position:relative;
+right:-13px;
+}
+#p
+{
+position:relative;
+right:-5px;
+}
+#g
+{
+position:relative;
+right:2px;
+}
+h1 {
+	text-color: red;
+}
+p{
+    border-style: solid;
+    border-color: #0000ff;
+}
+</style>
+</head>
+<script>
+function vr()
+{
+	if(/\W/.test(document.f.username.value))
+	{
+		alert("special symbols not ALLOWED");
+		document.f.username.value="";
+		document.f.username.focus();
+		return false;
+	}
+	if(document.f.username.value==document.f.pass.value)
+	{
+		alert("username is not allowed");
+		document.f.pass.value="";
+		document.f.pass.focus();
+		return false;
+	}
+	
+	else if(document.f.pass.value!=document.f.repass.value)
+	{
+		alert("recheck password");
+		document.f.repass.value="";
+		document.f.repass.focus();	
+		return false;
+	}
+	else if(document.f.ph.value!>10)
+	{
+		alert("phone number cannnot be greater than 10 digits");
+		document.f.ph.value="";
+		document.f.ph.focus();
+		return false;
+	}
+	
+	if()
+}
+</script>
+<body background="tt.jpg" width="1px" height="15px">
+
+<h1><center>REGISTRATION FORM</center></h1>
+<div id="ratata">
+<center>
+<form name="f" method="POST" action="http://localhost/register.php"  onsubmit="return vr()">
+<span id="g"><strong></i>FIRST NAME</i>:</strong>
+<input type="text" name="firstname" required></span><br> <br><br>
+<strong><i>LAST NAME</i>:</strong>
+<input type="text" name="lastname" required ><br> <br> <br>
+<strong><i>USERNAME</i>:</strong>
+<input type="username" name="username" required><br> <br> <br>
+<strong><i>PASSWORD</i>:</strong>
+<input type="password" name="password" required><br> <br> <br>
+<span id="k"><strong><i>RE-PASSWORD</i>:</strong>
+<input type="password" name="repass" required></span><br> <br> <br>
+<span id="b"><strong><i>EMAIL</i> :</strong>
+<input type="email" name="e" required ></span><br> <br> <br>
+<span id="a"><strong><i>D.O.B</i>:</strong>
+<input type="date" name="date" required></span><br> <br> <br>
+<span id="x"><strong><i>SEX</i>:</strong>
+<input type="radio" name="sex" value="male" required > Male
+  <input type="radio" name="sex" value="female" required> Female</span><br><br>
+<span id="p"><strong><i>PHONE NO</i>:</strong>
+<input type="number" name="ph"></span><br> <br> 
+
+<input type="submit" value="submit" align="center"><br> <br> 
+
+</form>
+</center>
+</div>
+</body>
+
+</html>

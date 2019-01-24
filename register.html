@@ -1,0 +1,44 @@
+<script>
+	function passValidate(){
+		if(/\W/.test(document.getElementById('user').value)){
+			alert("Special characters Not allowed");
+			document.getElementById('user').value="";
+			document.getElementById('user').focus();
+			return false;
+		}
+		if(document.getElementById('user').value == document.getElementById('npass').value)
+		{
+			alert("Username and Pssword same please change it.");
+			document.getElementById('npass').value="";
+			document.getElementById('npass').focus();
+			return false;
+		}
+		if(document.getElementById('npass').value.length < 6)
+		{
+			alert("Password length should be atleast 6");
+			document.getElementById('npass').value="";
+			document.getElementById('npass').focus();
+			return false;
+		}
+		
+		if((document.getElementById('npass').value)!=(document.getElementById('rpass').value)){
+			alert("Password Mismatch. Please Recheck Password");
+			document.getElementById('rpass').value="";
+			document.getElementById('rpass').focus();
+			return false;
+		}
+		
+
+	}
+</script>
+
+<body>
+<form onsubmit='return passValidate()'>
+	Username : <input type=text id=user placeholder='User Name' required><br>
+	Email Address: <input type=email id=email required><br>
+	New Password: <input type=password id=npass required><br>
+	Retype Password: <input type=password id=rpass required><br>
+	Sex: <input type=radio name=sex required> Male <input type=radio name=sex> Female<br>
+	<input type=submit>
+</form>
+</body>
